@@ -45,6 +45,16 @@ module.exports = {
                     'ts-loader'
                 ], //用ts-loader再用babel，后面的先执行
                 exclude: /node-modules/ //忽略node安装包
+            },
+
+            //设置less文件处理
+            {
+                test: /\.less$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "less-loader"
+                ], //lessloader --> css-loader --> style-loader
             }
         ]
     },
@@ -53,7 +63,7 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             //对HTML文件自定义
-            title: 'My App',
+            title: 'Snake',
             //template: './src/xxx.html'//以某个文件为模板来生成
         }),
         new CleanWebpackPlugin()
