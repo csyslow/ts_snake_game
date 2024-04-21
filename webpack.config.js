@@ -23,7 +23,7 @@ module.exports = {
                 use: [
                     //配置babel
                     {
-                        Loader: "babel-loader",
+                        loader: "babel-loader",
                         options: {
                             presets: [
                                 [
@@ -33,7 +33,7 @@ module.exports = {
                                             "chrome": "88" //兼容到chrome88
                                         },
                                         //指定core-js版本
-                                        "core-js": "3",
+                                        "corejs": "3",
                                         //按需加载，让文件尽量小
                                         "useBuiltIns": "usage"
                                     }
