@@ -56,11 +56,29 @@ class GameControl {
                 break;
         }
 
-        this.snake.x = new_x;
-        this.snake.y = new_y;
-        
+        this.checkEat(new_x, new_y);
+
+        //check if the snake hits the bound
+        try {
+            this.snake.x = new_x;
+            this.snake.y = new_y;
+        } catch (error: any) {
+            alert(error.message + ' The game is over');
+            this.gameOver = true;
+        }
+
+
         //定时调用,moveSnake执行到末尾的时候又开启定时器执行moveSnake
         this.gameOver || setTimeout(this.moveSnake.bind(this), 300 - (this.scoreBoard.level - 1) * 30);
+    }
+
+    //check if the snake got the food
+    checkEat(x: number, y: number) {
+        if(x === this.food.x && y === this.food.y){
+            this.food.changePosition();
+            this.scoreBoard.addScore();
+            this.snake.addBody();
+        }
     }
 }
 

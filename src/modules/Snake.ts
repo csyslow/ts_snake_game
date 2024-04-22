@@ -21,10 +21,24 @@ class Snake {
 
     //set snake head offsets
     set x(value: number) {
+        if (this.x === value) {
+            return;
+        }
+        //hit the bound
+        if (value < 0 || value > 290) {
+            throw new Error('the snake hit the bound.')
+        }
         this.snakeHead.style.left = value + 'px';
     }
 
     set y(value: number) {
+        if (this.y === value) {
+            return;
+        } 
+        //hit the bound
+        if (value < 0 || value > 290) {
+            throw new Error('The snake hits the wall!')
+        }
         this.snakeHead.style.top = value + 'px';
     }
 
