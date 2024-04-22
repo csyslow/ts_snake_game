@@ -75,6 +75,7 @@ class GameControl {
     //check if the snake got the food
     checkEat(x: number, y: number) {
         if(x === this.food.x && y === this.food.y){
+            //operations after got the food
             this.food.changePosition();
             this.scoreBoard.addScore();
             this.snake.addBody();
