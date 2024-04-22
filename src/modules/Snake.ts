@@ -6,7 +6,7 @@ class Snake {
     snakeElem: HTMLElement;
     constructor() {
         this.snakeHead = document.querySelector('#snake > div')!;
-        this.snakeBodies = document.getElementById('snake')!.getElementsByTagName('div'); //返回的是collection，queryselectall会返回nodelist吗，不是动态的
+        this.snakeBodies = document.getElementById('snake')!.getElementsByTagName('div'); //返回的是HTMLcollection（动态），queryselectall会返回nodelist（静态）
         this.snakeElem = document.getElementById("snake")!;
     }
 
