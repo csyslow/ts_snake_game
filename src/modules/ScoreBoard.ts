@@ -1,6 +1,6 @@
 class ScoreBoard {
-    private score: number = 0;
-    private level: number = 1;
+    score: number = 0;
+    level: number = 1;
     scoreElem: HTMLElement;
     levelElem: HTMLElement;
     maxLv: number;
