@@ -63,10 +63,10 @@ module.exports = {
     plugins: [
         new HTMLWebpackPlugin({
             //对HTML文件自定义
-            title: 'Snake',
-            //template: './src/xxx.html'//以某个文件为模板来生成
+            // title: 'Snake',
+            template: './src/style/index.html'//以某个文件为模板来生成
         }),
-        new CleanWebpackPlugin()
+        //new CleanWebpackPlugin()//自动清空打包文件
     ],
     mode: "development",
 
